@@ -1,0 +1,545 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+
+//============
+// Box Sizing
+//============
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+//============
+// Variables
+//============
+
+%container {
+  width: 98%;
+  position: absolute;
+  top: 50;
+  left: 0;
+
+}
+
+
+//============
+// TYPOGRAPHY
+//============
+
+.top-bar { 
+  a {
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+      cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+      transition: all .1s ease-in-out;
+      border-bottom: 2px solid $primary-color;
+      background-color: transparent;
+        }
+  }
+}
+
+.title {
+    color: $oil;
+    text-align: center;
+    padding: 1rem 0 0;
+}
+
+hr {
+  width: 85%;
+  margin: 1rem auto;
+
+}
+
+
+//============
+// Top-Bar
+//============
+
+.top-bar {
+    text-align: center; // centers the nav
+    height: 5rem; // height of top bar
+}
+
+//also centers the nav
+ul.center-buttons {
+   display: inline-block;
+}
+
+.top-bar-section ul li > a {
+  color: $primary-color;
+  line-height: 2rem;
+  margin: $margin;
+}
+.top-bar ul li {
+    background-color: transparent !important;
+    margin: $margin;
+    padding: .5rem .25rem;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+      line-height: 2rem; //space between icon and link
+      padding: 0 .125rem; // padding between nav links
+}
+@media only screen and (min-width: 20em) {
+    .top-bar-section li:not(.has-form) a:not(.button) {
+      padding: 0 .25rem;
+  }
+}
+@media only screen and (min-width: 40em) {
+    .top-bar-section li:not(.has-form) a:not(.button) {
+      padding: 0 1rem;
+  }
+}
+ 
+
+//============
+// LOGO
+//============
+
+.logoBanner {
+  padding: .75rem 0;
+  img {
+    width: 3.5rem;
+    height: auto;
+    margin: $margin;
+    //text-align: center;
+    //float: none;
+    display: block;
+  }
+  h5 {
+    margin: $margin;
+    text-align: center;
+  }
+}
+
+
+//============
+// HOME PAGE
+//============
+
+body.landing {
+
+  //wood background
+  background: url(../img/bg.png) center center/cover no-repeat fixed $background-color;
+
+  //makes top-bar transparent
+  .top-bar{
+    background-color: transparent !important;
+  }
+
+  //landing page logo
+  .brand {
+    text-align: center;
+    margin: 6rem auto 8rem;
+  }
+  .logo {
+    height: 10px;
+    width: 10px;
+    margin: $margin;
+  }
+
+  // makes title white
+  .title {
+    color: $vapor;
+  }
+
+  //white text in footer
+  footer {
+    color: $vapor;
+    a {
+      color: $vapor; 
+    }
+  }
+
+}
+
+
+//============
+// ABOUT
+//============
+
+
+.aboutMe {
+  padding: 0 2.5rem;
+}
+
+.contactMe {
+  padding: 0 2.5rem;
+}
+
+
+@media only screen and (min-width: 40.0625em) {
+  .aboutMe {
+    padding: 0 5rem;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  .contactMe {
+    padding: 0 5rem;
+  }
+}
+
+//============
+// FOOTER
+//============
+
+footer {
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    color: $oil;
+    font-size: 10px;
+      cursor: pointer;
+    a {
+      color: $oil;
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+        color:$primary-color;
+      }
+    }
+  }
+
+
+//============
+// PORTFOLIO
+//============
+
+.portfolioGallery {
+  margin: 0 auto;
+  float: none;
+}
+.fancybox img {
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+
+//============
+// MIXINS
+
+// Mixin for breakpoints
+@mixin breakpoint($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// Mixin for breakpoints
+@mixin breakpoint($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+
+
+//============
+// ELEMENTS
+
+/*
+// Set cursor to pointer for labels that have 'for' attribute
+label[for] {
+  cursor: pointer;
+}
+
+
+// Hide checkboxes. They're triggered through labels
+input[type="checkbox"] {
+  display: none;
+}
+
+
+// When toggling lightbox grid's opacity will lower and body's black background color will make a fading element
+body.portfolio {
+  background-color: $background-color;
+}
+
+
+// Containers
+%container {
+  width: 100%;
+  position: fixed;
+  top: 10;
+  left: 0;
+}
+
+
+// Lightboxes
+// Hiding lightboxes happens by setting their scale to 0. This way it's possible to create animated transition when showing them
+.lightbox {
+  @extend %container;
+  
+  z-index: 1;
+  min-height: 100%;
+  overflow: auto; //auto
+  transform: scale(0);
+  transition: transform .5s ease-out;
+  
+  img {
+    position: fixed;
+    top: 40%; // 50%
+    left: 50%;
+    max-width: 96%;
+    max-height: 96%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+}
+
+
+// Set lightboxes scale to 1 when opening lightbox. Read more above
+input[type="checkbox"]:checked + .lightbox {
+  transform: scale(1);
+}
+
+
+// Reduce grid's opacity when opening lightbox. Read more above
+input[type="checkbox"]:checked ~ .grid {
+  opacity: .125;
+}
+
+
+// The grid of images
+.grid {
+  @extend %container;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 80%; // makes bottom row visible
+  padding: 16px;
+  overflow: auto;
+  z-index: 0;
+  background-color: $background-color;
+  text-align: center;
+  transition: opacity .75s;
+  
+  .grid-item {
+    display: block;
+    width: 25%;
+    padding: 16px;
+    opacity: .75;
+    transition: opacity .5s;
+  
+    &:hover {
+      opacity: 1;
+    }
+    
+    @include breakpoint(1280px) { width: 33.3333%; }
+    @include breakpoint(960px)  { width: 50%; }
+    @include breakpoint(480px)  { width: 100%; }
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+} 
+*/
+// =========
+//
+// =========
+body.portfolio {
+  background-color: $background-color;
+}
+
+.gallery ul li {
+  float: left;
+  margin: 0 0.87719%;
+}
+
+.gallery {
+  padding: 3rem 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.gallery ul {
+  position: relative;
+}
+.gallery ul li {
+  margin: 0 auto;
+  width: 25%;
+  padding: .5rem;
+  position: relative;
+  list-style-type: none;
+
+    @include breakpoint(1280px) { width: 33.3333%; }
+    @include breakpoint(960px)  { width: 50%; }
+    @include breakpoint(480px)  { width: 100%; }
+
+}
+.gallery ul li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.gallery ul li a:hover:before {
+  top: 50%;
+  opacity: 1;
+}
+.gallery ul li a:after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+     -moz-transition: all 0.3s linear;
+          transition: all 0.3s linear;
+}
+.gallery ul li a:hover:after {
+  opacity: 1;
+}
+
+.port {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 8rem;
+  background: $vapor;
+  background-color: $vapor;
+  z-index: 103;
+  border-bottom: 1px solid #d0d0d0;
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s ease-in-out;
+     -moz-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+
+    @include breakpoint(960px)  { height: 50%; }
+    @include breakpoint(480px)  { height: 30%; }
+
+}
+.port img {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  .port img  {
+    width: 50%;
+  }
+}
+.port .description {
+  float: left;
+  width: 100%;
+  max-height: 100%;
+  padding: 0 40px 40px;
+  overflow: auto;
+}
+@media only screen and (min-width: 40.0625em) {
+  .port .description {
+    width: 50%;
+  }
+}
+.port h1 {
+  font-size: 3rem;
+  line-height: 2.3;
+  padding: 0;
+}
+.port > * {
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+     -moz-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+}
+.port.item_open {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: all 0.4s ease-in-out;
+     -moz-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+}
+.port > * {
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.close {
+  width: 21px;
+  height: 21px;
+  background: url(../img/close.svg) no-repeat;
+  position: absolute;
+  right: 10px;
+  top: -121px;
+  opacity: 1;
+  z-index: 1004;
+  -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
+}
+.item_open .close {
+  opacity: 1;
+  top: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
